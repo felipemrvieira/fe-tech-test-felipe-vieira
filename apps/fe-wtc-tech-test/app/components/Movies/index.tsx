@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './movies.module.css';
+import Card from '../Card';
 
 const movies: React.FC = () => {
   function getMovies() {
@@ -22,9 +23,9 @@ const movies: React.FC = () => {
         <h1>Movies</h1>
         <span>({movies.length})</span>
       </header>
-      <section>
+      <section className={styles.movies}>
         {movies.map((movie) => (
-          <div key={movie.imdbID}>{movie.Title}</div>
+          <Card key={movie.imdbID} Title={movie.Title} Poster={movie.Poster} />
         ))}
       </section>
     </>
