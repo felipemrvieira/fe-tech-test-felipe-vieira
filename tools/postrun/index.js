@@ -55,7 +55,7 @@ const postRun = async () => {
 
     figlet.text(
       `Welcome,
-      
+
       ${capitalize(answers.name)} ${capitalize(answers.surname)}!!`,
       async (err, data) => {
         if (err) return;
