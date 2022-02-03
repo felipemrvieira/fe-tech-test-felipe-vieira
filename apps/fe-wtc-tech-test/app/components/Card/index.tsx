@@ -79,7 +79,7 @@ const card: React.FC<Movie> = ({
         />
       );
     }
-    for (var i = 0; i < 4 - fullStars; i++)
+    for (var i = 0; i < 4 - Number(fullStars); i++)
       stars.push(
         <StarBorderIcon
           fontSize="small"
