@@ -3,13 +3,23 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: aqua;
+  background-color: #fff;
   margin: 20px;
   height: 300px;
   width: 200px;
   border-radius: 20px;
   -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
+}
+
+.cardWatchedAndSaved {
+  background-color: #049452;
+}
+.cardWatched {
+  background-color: #eec907;
+}
+.cardSaved {
+  background-color: #ed6606;
 }
 .header {
   width: 100%;
@@ -22,6 +32,7 @@
 .icon {
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 
 .poster {

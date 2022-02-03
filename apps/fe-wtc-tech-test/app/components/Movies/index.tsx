@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './movies.module.css';
 import Card from '../Card';
+import { stringToBoolean } from '../../helpers';
 
 const movies: React.FC = () => {
   function getMovies() {
@@ -25,7 +26,14 @@ const movies: React.FC = () => {
       </header>
       <section className={styles.movies}>
         {movies.map((movie) => (
-          <Card key={movie.imdbID} Title={movie.Title} Poster={movie.Poster} />
+          <Card
+            key={movie.imdbID}
+            Title={movie.Title}
+            Poster={movie.Poster}
+            Watched={stringToBoolean(movie.Watched)}
+            Saved={stringToBoolean(movie.Saved)}
+            Ratings={movie.Ratings}
+          />
         ))}
       </section>
     </>
