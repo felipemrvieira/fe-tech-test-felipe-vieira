@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, CssBaseline } from '@material-ui/core';
 import { Header, Theme } from '@mono-nx-test-with-nextjs/fe-wtc-tech-test';
-import { Footer } from '@mono-nx-test-with-nextjs/ui';
+// import { Footer } from '@mono-nx-test-with-nextjs/ui';
 import LINKS from '../../../common/links.json';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
@@ -29,7 +29,7 @@ const App = ({ Component, pageProps }) => {
         <div className={classes.contentContainer}>
           <Component {...pageProps} />
         </div>
-        <Footer links={[Instructions, Design, Swagger, Storybook]} />
+        {/* <Footer links={[Instructions, Design, Swagger, Storybook]} /> */}
       </Container>
     </ThemeProvider>
   );
