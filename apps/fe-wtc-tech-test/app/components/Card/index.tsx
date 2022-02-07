@@ -14,6 +14,7 @@ import {
 } from '@mono-nx-test-with-nextjs/ui';
 
 const card: React.FC<Movie> = ({
+  id,
   Title,
   Poster,
   Watched,
@@ -38,10 +39,27 @@ const card: React.FC<Movie> = ({
 
   function handleWatchedClick() {
     setWatched(!watched);
+    editMovie({ saved: saved, watched: !watched });
   }
 
   function handleSavedClick() {
     setSaved(!saved);
+    editMovie({ saved: !saved, watched: watched });
+  }
+
+  function editMovie({ saved, watched }: { watched: boolean; saved: boolean }) {
+    const options = {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+      body: JSON.stringify({ watched: String(watched), saved: String(saved) }), // We send data in JSON format
+    };
+
+    fetch(`http://localhost:3333/api/movies/id/${id}`, options)
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
   }
 
   const rating = calcRating(Ratings);

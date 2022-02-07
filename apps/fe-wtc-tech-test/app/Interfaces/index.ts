@@ -1,4 +1,5 @@
 export interface Movie {
+  id: string;
   Title: string;
   Poster: string;
   Watched: boolean;

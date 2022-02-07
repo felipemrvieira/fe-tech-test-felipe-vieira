@@ -28,6 +28,7 @@ const movies: React.FC = () => {
         {movies.map((movie) => (
           <Card
             key={movie.imdbID}
+            id={movie.imdbID}
             Title={movie.Title}
             Poster={movie.Poster}
             Watched={stringToBoolean(movie.Watched)}
